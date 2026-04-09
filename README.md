@@ -1,6 +1,6 @@
 # Leave Management API (Sistem Pengajuan Cuti)
 
-## Teknologi yang Digunakan
+## Specifications
 * **Framework:** AdonisJS (Node.js)
 * **Bahasa:** TypeScript
 * **Database:** PostgreSQL
@@ -13,7 +13,7 @@
 3. **Opaque Access Tokens:** Sistem autentikasi menggunakan Opaque Tokens agar API bersifat *stateless* aman dan mudah di-revoke
 4. **Database Seeding:** Disediakan *seeder* untuk mempermudah pengujian
 
-## ⚙️ Cara Instalasi & Menjalankan Aplikasi
+## Cara Setup & Running
 
 **1. Clone Repositori & Install Dependencies**
 ```bash
