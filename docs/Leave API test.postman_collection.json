@@ -1,0 +1,240 @@
+{
+  "info": {
+    "_postman_id": "86e32f00-701f-49ea-a525-f138ec1bf97d",
+    "name": "Leave API test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37127340"
+  },
+  "item": [
+    {
+      "name": "Employee Registration",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"fullName\": \"Mirza Adi Raffiansyah\",\r\n  \"email\": \"hershey@example.com\",\r\n  \"password\": \"ilovecookies\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3333/api/v1/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3333",
+          "path": [
+            "api",
+            "v1",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"hershey@example.com\",\r\n  \"password\": \"ilovecookies\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3333/api/v1/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3333",
+          "path": [
+            "api",
+            "v1",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Employee Request Leave",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "oat_MQ.b1lxeHFzVExEZVFWOHJSWUJrczlnblBCeFVUbnFUdzBCR2pIUlpPZTE3NzU3NzkzMTU",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "startDate",
+              "value": "2026-05-10",
+              "type": "text",
+              "uuid": "f4cde2a8-a5ef-4b3f-94e9-26c746d71091"
+            },
+            {
+              "key": "endDate",
+              "value": "2026-05-12",
+              "type": "text",
+              "uuid": "8bf04ac6-7200-4a7b-a431-a5b559075e52"
+            },
+            {
+              "key": "reason",
+              "value": "Liburan Keluarga",
+              "type": "text",
+              "uuid": "61be9832-c073-4130-b35c-6fff403a0d60"
+            },
+            {
+              "key": "attachment",
+              "type": "file",
+              "uuid": "86450921-ab73-405c-b950-bc084b626090",
+              "src": "/C:/Users/mirza/Downloads/download.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3333/api/v1/leave",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3333",
+          "path": [
+            "api",
+            "v1",
+            "leave"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"adminonly\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3333/api/v1/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3333",
+          "path": [
+            "api",
+            "v1",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin Read All Leave Req",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "oat_Mg.YVptaEY0dnlLa3RaOTB5blBzTGtJeVN4NGFwQ3ZxMFFaeFlJR25FNTE3MTg2NTM4MDE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3333/api/v1/admin/leaves",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3333",
+          "path": [
+            "api",
+            "v1",
+            "admin",
+            "leaves"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "oat_Mg.YVptaEY0dnlLa3RaOTB5blBzTGtJeVN4NGFwQ3ZxMFFaeFlJR25FNTE3MTg2NTM4MDE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"approved\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3333/api/v1/admin/leaves/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3333",
+          "path": [
+            "api",
+            "v1",
+            "admin",
+            "leaves",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
