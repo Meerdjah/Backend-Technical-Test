@@ -38,6 +38,23 @@
     },
     {
       "name": "Employee Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const response = pm.response.json();\r",
+              "\r",
+              "if (response.token && response.token.token) {\r",
+              "    pm.collectionVariables.set(\"auth_token\", response.token.token);\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [],
@@ -74,7 +91,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "oat_MQ.b1lxeHFzVExEZVFWOHJSWUJrczlnblBCeFVUbnFUdzBCR2pIUlpPZTE3NzU3NzkzMTU",
+              "value": "{{auth_token}}",
               "type": "string"
             }
           ]
@@ -128,6 +145,23 @@
     },
     {
       "name": "Admin Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const response = pm.response.json();\r",
+              "\r",
+              "if (response.token && response.token.token) {\r",
+              "    pm.collectionVariables.set(\"auth_token\", response.token.token);\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [],
@@ -164,7 +198,7 @@
           "bearer": [
             {
               "key": "token",
-              "value": "oat_Mg.YVptaEY0dnlLa3RaOTB5blBzTGtJeVN4NGFwQ3ZxMFFaeFlJR25FNTE3MTg2NTM4MDE",
+              "value": "{{auth_token}}",
               "type": "string"
             }
           ]
@@ -189,14 +223,14 @@
       "response": []
     },
     {
-      "name": "New Request",
+      "name": "Admin Approve/Reject",
       "request": {
         "auth": {
           "type": "bearer",
           "bearer": [
             {
               "key": "token",
-              "value": "oat_Mg.YVptaEY0dnlLa3RaOTB5blBzTGtJeVN4NGFwQ3ZxMFFaeFlJR25FNTE3MTg2NTM4MDE",
+              "value": "{{auth_token}}",
               "type": "string"
             }
           ]
@@ -205,7 +239,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"status\": \"approved\"\r\n}",
+          "raw": "{\r\n  \"status\": \"rejected\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -229,12 +263,18 @@
           "variable": [
             {
               "key": "id",
-              "value": "1"
+              "value": "2"
             }
           ]
         }
       },
       "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_token",
+      "value": ""
     }
   ]
 }
