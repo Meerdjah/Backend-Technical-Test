@@ -53,10 +53,11 @@ npm run dev
 ```
 
 ## Akun Admin (Hak Akses Penuh / Approve / Reject)
-Email: admin@example.com
+Email: admin@example.com  
 Password: adminonly
 
-Postman Link: [Link]([https://www.markdownguide.org](https://web.postman.co/workspace/My-Workspace~300404e9-c566-441e-8e9e-336c33f74c1c/collection/37127340-86e32f00-701f-49ea-a525-f138ec1bf97d?action=share&source=copy-link&creator=37127340))
+Postman Link: [Link](https://web.postman.co/workspace/My-Workspace~300404e9-c566-441e-8e9e-336c33f74c1c/collection/37127340-86e32f00-701f-49ea-a525-f138ec1bf97d?action=share&source=copy-link&creator=37127340)
+  
 Offline Backup: File leave-api-collection.json di dalam folder /docs
 
 ## Struktur Endpoint
